@@ -169,20 +169,6 @@ int zmk_widget_peripheral_battery_status_init(struct zmk_widget_peripheral_batte
 
     lv_obj_set_size(widget->obj, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
 
-    for (int i =0; i< ZMK_SPLIT_BLE_PERIPHERAL_COUNT + SOURCE_OFFSET; i++) {  
-        lv_obj_t *image_canvas = lv_canvas_create(widget->obj);
-        // lv_obj_t *battery_label = lv_label_create(widget->obj);
-
-        lv_canvas_set_buffer(image_canvas, battery_image_buffer[i], 13, 20, LV_IMG_CF_TRUE_COLOR);
-        lv_obj_align(image_canvas, LV_ALIGN_TOP_LEFT, i*15, 1);
-        // lv_obj_align(battery_label, LV_ALIGN_TOP_LEFT, i*14+3, 10);
-        
-        lv_obj_add_flag(image_canvas, LV_OBJ_FLAG_HIDDEN);
-        // lv_obj_add_flag(battery_label, LV_OBJ_FLAG_HIDDEN);
-
-        lv_img_set_src(image_canvas, batterys_level[2]);
-    }
-
 #if IS_ENABLED(CONFIG_ZMK_SPLIT)
     for (int i =0; i< ZMK_SPLIT_BLE_PERIPHERAL_COUNT + SOURCE_OFFSET; i++) {  
         lv_obj_t *image_canvas = lv_canvas_create(widget->obj);
