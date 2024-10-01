@@ -1,0 +1,9 @@
+file_format: "1"
+id: display_042
+name: display_042
+type: shield
+url: https://github.com/kawvin/zmk-config
+requires: 
+  - i2c_oled
+features:
+  - display

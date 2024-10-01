@@ -1,0 +1,12 @@
+file_format: "1"
+id: kawvin_63
+name: kawvin_63
+type: shield
+url: https://github.com/kawvin/zmk-config
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+siblings:
+  - kawvin_63
