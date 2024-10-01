@@ -47,7 +47,12 @@ struct battery_state {
 };
 
 // static lv_color_t battery_image_buffer[ZMK_SPLIT_BLE_PERIPHERAL_COUNT + SOURCE_OFFSET][14 * 9];
-static lv_color_t battery_image_buffer[ZMK_SPLIT_BLE_PERIPHERAL_COUNT + SOURCE_OFFSET][13 * 20];
+#if IS_ENABLED(CONFIG_ZMK_SPLIT)
+    static lv_color_t battery_image_buffer[ZMK_SPLIT_BLE_PERIPHERAL_COUNT + SOURCE_OFFSET][13 * 20];
+#else
+    static lv_color_t battery_image_buffer[1+SOURCE_OFFSET][13 * 20];
+#endif
+
 
 static void set_battery_symbol(lv_obj_t *widget, struct battery_state state) {
     lv_obj_t *symbol = lv_obj_get_child(widget, state.source );

@@ -94,46 +94,98 @@
         esc {
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
+            timeout-ms = <200>;
         };
 
-        left_bkt {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <3 4>;
-        };
-
-        right_bkt {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <9 8>;
-        };
-
-        left_par {
-            bindings = <&kp LEFT_PARENTHESIS>;
+        bkt_left {
+            bindings = <&mt RIGHT_BRACKET LEFT_BRACKET>;
             key-positions = <16 17>;
+            timeout-ms = <200>;
         };
 
-        right_par {
-            bindings = <&kp RIGHT_PARENTHESIS>;
-            key-positions = <21 22>;
+        bkt_right {
+            bindings = <&mt LEFT_BRACKET RIGHT_BRACKET>;
+            key-positions = <20 21>;
+            timeout-ms = <200>;
         };
 
-        left_brace {
-            bindings = <&kp LEFT_BRACE>;
-            key-positions = <29 30>;
+        par_left {
+            bindings = <&mt RIGHT_PARENTHESIS LEFT_PARENTHESIS>;
+            key-positions = <3 2>;
+            timeout-ms = <200>;
         };
 
-        right_brace {
-            bindings = <&kp RIGHT_BRACE>;
-            key-positions = <34 35>;
+        par_right {
+            bindings = <&mt LEFT_PARENTHESIS RIGHT_PARENTHESIS>;
+            key-positions = <8 9>;
+            timeout-ms = <200>;
         };
 
-        bac {
-            bindings = <&kp NON_US_BACKSLASH>;
-            key-positions = <5 7>;
+        brace_left {
+            bindings = <&mt RIGHT_BRACE LEFT_BRACE>;
+            key-positions = <14 15>;
+            timeout-ms = <200>;
         };
 
-        pipe {
-            bindings = <&kp PIPE>;
-            key-positions = <18 20>;
+        brace_right {
+            bindings = <&mt LEFT_BRACE RIGHT_BRACE>;
+            key-positions = <23 22>;
+            timeout-ms = <200>;
+        };
+
+        bac_pipe {
+            bindings = <&mt PIPE BACKSLASH>;
+            key-positions = <13 14>;
+            timeout-ms = <200>;
+        };
+
+        minus_under_left {
+            bindings = <&mt UNDER MINUS>;
+            key-positions = <1 2>;
+            timeout-ms = <200>;
+        };
+
+        comma_dot {
+            bindings = <&mt DOT COMMA>;
+            key-positions = <48 49>;
+            timeout-ms = <200>;
+        };
+
+        bslh_fslh {
+            bindings = <&mt BSLH SLASH>;
+            key-positions = <48 47>;
+            timeout-ms = <200>;
+        };
+
+        minus_under_right {
+            bindings = <&mt UNDER MINUS>;
+            key-positions = <9 10>;
+            timeout-ms = <200>;
+        };
+
+        enter {
+            bindings = <&kp ENTER>;
+            key-positions = <39 40>;
+        };
+
+        question {
+            bindings = <&kp QMARK>;
+            key-positions = <45 46>;
+        };
+
+        vol_mute {
+            bindings = <&kp C_MUTE>;
+            key-positions = <58 61>;
+        };
+
+        vol_up {
+            bindings = <&kp C_VOL_UP>;
+            key-positions = <58 60>;
+        };
+
+        vol_down {
+            bindings = <&kp C_VOL_DN>;
+            key-positions = <58 59>;
         };
     };
 
