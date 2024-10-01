@@ -291,19 +291,19 @@
 
         mouse_layer {
 //  ---------------------------------------------------------------------------------
-//  |    |    |    |    |    |    |              |               |              |         |    |    |    |    |
-//  |    |    |    |    |    |    |              |&mkp LCLK      |&mmv MOVE_UP  |&mkp RCLK|    |    |    |    |
-//  |    |    |    |    |    |    |&mmv MOVE_LEFT|&mmv MOVE_RIGHT|&mmv MOVE_DOWN|         |    |    |    |    |
-//  |    |    |    |    |    |    |&mkp MCLK     |&mkp MB4       |&mkp MB5      |         |    |    |    |    |
-//  |    |    |    |    |    |    |              |               |              |         |    |    |    |    |
+//  |    |    |    |    |    |    |              |               |              |         |    |     |    |    |
+//  |    |    |    |    |    |    |              |&mkp LCLK      |&mmv MOVE_UP  |&mkp RCLK|    |     |    |    |
+//  |    |    |    |    |    |    |&mmv MOVE_LEFT|&mmv MOVE_RIGHT|&mmv MOVE_DOWN|         |    |     |    |    |
+//  |    |    |    |    |    |    |&mkp MCLK     |&mkp MB4       |&mkp MB5      |         |UP  |     |    |    |
+//  |    |    |    |    |    |    |              |               |              |LEFT     |DOWN|RIGHT|    |    |
 
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans           &trans          &trans     &trans  &trans  &trans  &trans  
-&trans  &trans  &trans  &trans  &trans  &trans  &trans          &mkp LCLK        &mmv MOVE_UP    &mkp RCLK  &trans  &trans  &trans  &trans  
-&trans  &trans  &trans  &trans  &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_RIGHT  &mmv MOVE_DOWN  &trans     &trans  &trans  &trans          
-&trans  &trans  &trans  &trans  &trans  &trans  &mkp MCLK       &mkp MB4         &mkp MB5        &trans     &trans  &trans                  
-&trans  &trans  &trans  &trans  &trans                          &trans           &trans          &trans     &trans  &trans                                 
+&trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans           &trans          &trans     &trans    &trans     &trans  &trans  
+&trans  &trans  &trans  &trans  &trans  &trans  &trans          &mkp LCLK        &mmv MOVE_UP    &mkp RCLK  &trans    &trans     &trans  &trans  
+&trans  &trans  &trans  &trans  &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_RIGHT  &mmv MOVE_DOWN  &trans     &trans    &trans     &trans          
+&trans  &trans  &trans  &trans  &trans  &trans  &mkp MCLK       &mkp MB4         &mkp MB5        &trans     &kp UP    &trans                     
+&trans  &trans  &trans  &trans  &trans                          &trans           &trans          &kp LEFT   &kp DOWN  &kp RIGHT                  
 
             >;
             label = "Mouse";
