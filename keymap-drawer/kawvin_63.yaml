@@ -371,7 +371,7 @@ layers:
   - '&mkp MB4'
   - '&mkp MB5'
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - UP
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -380,9 +380,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - LEFT
+  - DOWN
+  - RIGHT
 combos:
 - p: [0, 1]
   k: ESCAPE
