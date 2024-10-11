@@ -1,6 +1,6 @@
 layers:
   qwerty:
-  - '`'
+  - {t: ESC, h: '`'}
   - '1'
   - '2'
   - '3'
@@ -76,7 +76,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: number, h: toggle}
   - {t: ▽, type: trans}
   - '0'
   - '6'
@@ -99,9 +99,9 @@ layers:
   - KP PLUS
   - ENTER
   - KP PLUS
-  - KP 1
-  - KP 2
-  - KP 3
+  - '1'
+  - '2'
+  - '3'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -111,7 +111,7 @@ layers:
   - PG UP
   - PG DN
   - BSPC
-  - '-'
+  - KP MINUS
   - '0'
   - KP DOT
   - KP DOT
@@ -140,7 +140,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: function, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - F6
@@ -204,7 +204,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: symbol, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -266,9 +266,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: qwerty, h: toggle}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: control, h: toggle}
   - '&bootloader'
   - EP TOG
   - {t: ▽, type: trans}
@@ -332,7 +332,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: mouse, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -386,35 +386,29 @@ layers:
 combos:
 - p: [0, 1]
   k: ESCAPE
-- p: [16, 17]
+- p: [18, 19]
   k: {t: '[', h: ']'}
 - p: [20, 21]
   k: {t: ']', h: '['}
-- p: [3, 2]
+- p: [3, 4]
   k: {t: (, h: )}
-- p: [8, 9]
+- p: [9, 10]
   k: {t: ), h: (}
-- p: [14, 15]
+- p: [15, 16]
   k: {t: '{', h: '}'}
-- p: [23, 22]
+- p: [25, 26]
   k: {t: '}', h: '{'}
-- p: [13, 14]
+- p: [14, 15]
   k: {t: \, h: '|'}
 - p: [1, 2]
   k: {t: '-', h: _}
-- p: [48, 49]
+- p: [44, 45]
   k: {t: ',', h: .}
-- p: [48, 47]
+- p: [43, 44]
   k: {t: /, h: \}
-- p: [9, 10]
+- p: [12, 11]
   k: {t: '-', h: _}
-- p: [39, 40]
+- p: [35, 36]
   k: ENTER
-- p: [45, 46]
+- p: [42, 43]
   k: '?'
-- p: [58, 61]
-  k: MUTE
-- p: [58, 60]
-  k: VOL UP
-- p: [58, 59]
-  k: VOL DN
