@@ -4,12 +4,12 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
-#include <behaviors/mouse_keys.dtsi>
 #include <dt-bindings/zmk/outputs.h>
 
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 600
@@ -23,20 +23,13 @@
 
 / {
     macros {
-
         Ky_MyPwd: Ky_MyPwd {
             label = "Ky_MyPwd";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <0>;
-            bindings =
-                <&kp N0>,
-                <&kp N1>,
-                <&kp N2>,
-                <&kp N3>,
-                <&kp N4>,
-                <&kp N5>;
+            bindings = <&kp N0 &kp N1 &kp N2 &kp N3 &kp N4 &kp N5>;
         };
 
         end_enter: end_enter {
@@ -52,7 +45,6 @@
             bindings = <&kp END &kp SEMI &kp ENTER>;
             label = "END_SEMI_ENTER";
         };
-
     };
 
     behaviors {
@@ -73,8 +65,9 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <500>;
-            quick-tap-ms = <200>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <180>;
+            flavor = "tap-preferred";
         };
 
         as: auto_shift {
@@ -99,7 +92,7 @@
 
         bkt_left {
             bindings = <&mt RIGHT_BRACKET LEFT_BRACKET>;
-            key-positions = <16 17>;
+            key-positions = <18 19>;
             timeout-ms = <200>;
         };
 
@@ -111,31 +104,31 @@
 
         par_left {
             bindings = <&mt RIGHT_PARENTHESIS LEFT_PARENTHESIS>;
-            key-positions = <3 2>;
+            key-positions = <3 4>;
             timeout-ms = <200>;
         };
 
         par_right {
             bindings = <&mt LEFT_PARENTHESIS RIGHT_PARENTHESIS>;
-            key-positions = <8 9>;
+            key-positions = <9 10>;
             timeout-ms = <200>;
         };
 
         brace_left {
             bindings = <&mt RIGHT_BRACE LEFT_BRACE>;
-            key-positions = <14 15>;
+            key-positions = <15 16>;
             timeout-ms = <200>;
         };
 
         brace_right {
             bindings = <&mt LEFT_BRACE RIGHT_BRACE>;
-            key-positions = <23 22>;
+            key-positions = <25 26>;
             timeout-ms = <200>;
         };
 
         bac_pipe {
             bindings = <&mt PIPE BACKSLASH>;
-            key-positions = <13 14>;
+            key-positions = <14 15>;
             timeout-ms = <200>;
         };
 
@@ -147,45 +140,30 @@
 
         comma_dot {
             bindings = <&mt DOT COMMA>;
-            key-positions = <48 49>;
+            key-positions = <44 45>;
             timeout-ms = <200>;
         };
 
         bslh_fslh {
             bindings = <&mt BSLH SLASH>;
-            key-positions = <48 47>;
+            key-positions = <43 44>;
             timeout-ms = <200>;
         };
 
         minus_under_right {
             bindings = <&mt UNDER MINUS>;
-            key-positions = <9 10>;
+            key-positions = <12 11>;
             timeout-ms = <200>;
         };
 
         enter {
             bindings = <&kp ENTER>;
-            key-positions = <39 40>;
+            key-positions = <35 36>;
         };
 
         question {
             bindings = <&kp QMARK>;
-            key-positions = <45 46>;
-        };
-
-        vol_mute {
-            bindings = <&kp C_MUTE>;
-            key-positions = <58 61>;
-        };
-
-        vol_up {
-            bindings = <&kp C_VOL_UP>;
-            key-positions = <58 60>;
-        };
-
-        vol_down {
-            bindings = <&kp C_VOL_DN>;
-            key-positions = <58 59>;
+            key-positions = <42 43>;
         };
     };
 
@@ -193,119 +171,119 @@
         compatible = "zmk,keymap";
 
         qwerty_layer {
-//  ---------------------------------------------------------------------------------
-//  |GRAVE |N1  |N2  |N3        |N4          |N5  |N6  |N7          |N8        |N9  |N0  |MINUS |EQUAL|BSPC|
-//  |TAB   |Q   |W   |E         |R           |T   |Y   |U           |I         |O   |P   |LBKT  |RBKT |BSLH|
-//  |CAPS  |A   |S   |D         |&ltq 2 F    |G   |H   |J           |K         |L   |SEMI|SQT   |ENTER|    |
-//  |LSHIFT|Z   |X   |C         |&ltq 3 V    |B   |N   |M           |COMMA     |DOT |FSLH|RSHIFT|     |    |
-//  |LCTRL |LGUI|LALT|&ltq 4 DEL|&ltq 1 SPACE|    |    |&ltq 1 SPACE|&ltq 5 INS|RGUI|RALT|RCTRL |     |    |
+            //  ---------------------------------------------------------------------------------
+            //  |GRAVE |N1  |N2  |N3        |N4          |N5  |N6  |N7          |N8        |N9  |N0  |MINUS |EQUAL|BSPC|
+            //  |TAB   |Q   |W   |E         |R           |T   |Y   |U           |I         |O   |P   |LBKT  |RBKT |BSLH|
+            //  |CAPS  |A   |S   |D         |&ltq 2 F    |G   |H   |J           |K         |L   |SEMI|SQT   |ENTER|    |
+            //  |LSHIFT|Z   |X   |C         |&ltq 3 V    |B   |N   |M           |COMMA     |DOT |FSLH|RSHIFT|     |    |
+            //  |LCTRL |LGUI|LALT|&ltq 4 DEL|&ltq 1 SPACE|    |    |&ltq 1 SPACE|&ltq 5 INS|RGUI|RALT|RCTRL |     |    |
 
             bindings = <
-&kp GRAVE   &kp N1    &kp N2    &kp N3      &kp N4        &kp N5  &kp N6  &kp N7        &kp N8      &kp N9    &kp N0    &kp MINUS   &kp EQUAL  &kp BSPC  
-&kp TAB     &kp Q     &kp W     &kp E       &kp R         &kp T   &kp Y   &kp U         &kp I       &kp O     &kp P     &kp LBKT    &kp RBKT   &kp BSLH  
-&kp CAPS    &kp A     &kp S     &kp D       &ltq 2 F      &kp G   &kp H   &kp J         &kp K       &kp L     &kp SEMI  &kp SQT     &kp ENTER            
-&kp LSHIFT  &kp Z     &kp X     &kp C       &ltq 3 V      &kp B   &kp N   &kp M         &kp COMMA   &kp DOT   &kp FSLH  &kp RSHIFT                       
-&kp LCTRL   &kp LGUI  &kp LALT  &ltq 4 DEL  &ltq 1 SPACE                  &ltq 1 SPACE  &ltq 5 INS  &kp RGUI  &kp RALT  &kp RCTRL                        
-
+&mt GRAVE ESC  &kp N1    &kp N2    &kp N3      &kp N4        &kp N5  &kp N6        &kp N7      &kp N8     &kp N9    &kp N0     &kp MINUS   &kp EQUAL  &kp BSPC
+&kp TAB        &kp Q     &kp W     &kp E       &kp R         &kp T   &kp Y         &kp U       &kp I      &kp O     &kp P      &kp LBKT    &kp RBKT   &kp BSLH
+&kp CAPS       &kp A     &kp S     &kp D       &ltq 2 F      &kp G   &kp H         &kp J       &kp K      &kp L     &kp SEMI   &kp SQT     &kp ENTER
+&kp LSHIFT     &kp Z     &kp X     &kp C       &ltq 3 V      &kp B   &kp N         &kp M       &kp COMMA  &kp DOT   &kp FSLH   &kp RSHIFT
+&kp LCTRL      &kp LGUI  &kp LALT  &ltq 4 DEL  &ltq 1 SPACE          &ltq 1 SPACE  &ltq 5 INS  &kp RGUI   &kp RALT  &kp RCTRL
             >;
+
             label = "Qwerty";
         };
 
         number_layer {
-//  ---------------------------------------------------------------------------------
-//  |N0  |     |            |           |     |     |                        |     |    |    |    |    |    |    |
-//  |N0  |N6   |N7          |N8         |N9   |DOT  |&mt KP_SLASH KP_MULTIPLY|N4   |N5  |N6  |    |    |    |    |
-//  |    |SLASH|MULTIPLY    |MINUS      |PLUS |ENTER|PLUS                    |1    |2   |3   |    |    |    |    |
-//  |    |HOME |END         |PG_UP      |PG_DN|BSPC |MINUS                   |N0   |DOT |DOT |    |    |    |    |
-//  |    |     |LC(LS(HOME))|LC(LS(END))|     |     |                        |ENTER|    |    |    |    |    |    |
+            //  ---------------------------------------------------------------------------------
+            //  |N0  |     |            |           |     |     |                        |     |    |    |    |    |    |    |
+            //  |N0  |N6   |N7          |N8         |N9   |DOT  |&mt KP_SLASH KP_MULTIPLY|N4   |N5  |N6  |    |    |    |    |
+            //  |    |SLASH|MULTIPLY    |MINUS      |PLUS |ENTER|PLUS                    |1    |2   |3   |    |    |    |    |
+            //  |    |HOME |END         |PG_UP      |PG_DN|BSPC |MINUS                   |N0   |DOT |DOT |    |    |    |    |
+            //  |    |     |LC(LS(HOME))|LC(LS(END))|     |     |                        |ENTER|    |    |    |    |    |    |
 
             bindings = <
-&kp N0  &trans        &trans            &trans           &trans       &trans      &trans                    &trans     &trans      &trans      &trans  &trans  &trans  &trans  
-&kp N0  &kp N6        &kp N7            &kp N8           &kp N9       &kp KP_DOT  &mt KP_SLASH KP_MULTIPLY  &kp N4     &kp N5      &kp N6      &trans  &trans  &trans  &trans  
-&trans  &kp KP_SLASH  &kp KP_MULTIPLY   &kp KP_MINUS     &kp KP_PLUS  &kp ENTER   &kp KP_PLUS               &kp KP_N1  &kp KP_N2   &kp KP_N3   &trans  &trans  &trans          
-&trans  &kp HOME      &kp END           &kp PG_UP        &kp PG_DN    &kp BSPC    &kp MINUS                 &kp N0     &kp KP_DOT  &kp KP_DOT  &trans  &trans                  
-&trans  &trans        &kp LC(LS(HOME))  &kp LC(LS(END))  &trans                                             &kp ENTER  &trans      &trans      &trans  &trans                  
-
+&kp N0  &trans        &trans            &trans           &trans       &trans      &trans                    &trans  &trans      &trans      &trans  &trans  &to 1   &trans
+&kp N0  &kp N6        &kp N7            &kp N8           &kp N9       &kp KP_DOT  &mt KP_SLASH KP_MULTIPLY  &kp N4  &kp N5      &kp N6      &trans  &trans  &trans  &trans
+&trans  &kp KP_SLASH  &kp KP_MULTIPLY   &kp KP_MINUS     &kp KP_PLUS  &kp ENTER   &kp KP_PLUS               &kp N1  &kp N2      &kp N3      &trans  &trans  &trans
+&trans  &kp HOME      &kp END           &kp PG_UP        &kp PG_DN    &kp BSPC    &kp KP_MINUS              &kp N0  &kp KP_DOT  &kp KP_DOT  &trans  &trans
+&trans  &trans        &kp LC(LS(HOME))  &kp LC(LS(END))  &trans                   &kp ENTER                 &trans  &trans      &trans      &trans
             >;
+
             label = "Number";
         };
 
         function_layer {
-//  ---------------------------------------------------------------------------------
-//  |    |F1  |F2       |F3   |F4  |F5  |     |     |    |          |               |    |    |    |
-//  |    |F6  |&mt F7 UP|F8   |F9  |F10 |     |HOME |UP  |END       |               |    |    |    |
-//  |    |LEFT|DOWN     |RIGHT|    |F11 |LEFT |RIGHT|DOWN|&end_enter|&end_semi_enter|    |    |    |
-//  |    |    |         |     |    |F12 |PG_DN|PG_UP|    |          |               |    |    |    |
-//  |    |    |         |     |    |    |     |     |    |          |               |    |    |    |
+            //  ---------------------------------------------------------------------------------
+            //  |    |F1  |F2       |F3   |F4  |F5  |     |     |    |          |               |    |    |    |
+            //  |    |F6  |&mt F7 UP|F8   |F9  |F10 |     |HOME |UP  |END       |               |    |    |    |
+            //  |    |LEFT|DOWN     |RIGHT|    |F11 |LEFT |RIGHT|DOWN|&end_enter|&end_semi_enter|    |    |    |
+            //  |    |    |         |     |    |F12 |PG_DN|PG_UP|    |          |               |    |    |    |
+            //  |    |    |         |     |    |    |     |     |    |          |               |    |    |    |
 
             bindings = <
-&trans  &kp F1    &kp F2     &kp F3     &kp F4  &kp F5   &trans     &trans     &trans    &trans      &trans           &trans  &trans  &trans  
-&trans  &kp F6    &mt F7 UP  &kp F8     &kp F9  &kp F10  &trans     &kp HOME   &kp UP    &kp END     &trans           &trans  &trans  &trans  
-&trans  &kp LEFT  &kp DOWN   &kp RIGHT  &trans  &kp F11  &kp LEFT   &kp RIGHT  &kp DOWN  &end_enter  &end_semi_enter  &trans  &trans          
-&trans  &trans    &trans     &trans     &trans  &kp F12  &kp PG_DN  &kp PG_UP  &trans    &trans      &trans           &trans                  
-&trans  &trans    &trans     &trans     &trans                      &trans     &trans    &trans      &trans           &trans                  
-
+&trans  &kp F1    &kp F2     &kp F3     &kp F4  &kp F5   &trans     &trans     &trans    &trans      &trans           &trans  &to 2   &trans
+&trans  &kp F6    &mt F7 UP  &kp F8     &kp F9  &kp F10  &trans     &kp HOME   &kp UP    &kp END     &trans           &trans  &trans  &trans
+&trans  &kp LEFT  &kp DOWN   &kp RIGHT  &trans  &kp F11  &kp LEFT   &kp RIGHT  &kp DOWN  &end_enter  &end_semi_enter  &trans  &trans
+&trans  &trans    &trans     &trans     &trans  &kp F12  &kp PG_DN  &kp PG_UP  &trans    &trans      &trans           &trans
+&trans  &trans    &trans     &trans     &trans           &trans     &trans     &trans    &trans      &trans
             >;
+
             label = "Function";
         };
 
         symbol_layer {
-//  ---------------------------------------------------------------------------------
-//  |CARET|AMPS|STAR|LPAR|RPAR|    |    |    |    |    |    |    |    |    |
-//  |     |    |    |    |    |    |    |    |    |    |    |    |    |    |
-//  |     |    |    |    |    |    |    |    |    |    |    |    |    |    |
-//  |     |    |    |    |    |    |    |    |    |    |    |    |    |    |
-//  |     |    |    |    |    |    |    |    |    |    |    |    |    |    |
+            //  ---------------------------------------------------------------------------------
+            //  |CARET|AMPS|STAR|LPAR|RPAR|    |    |    |    |    |    |    |    |    |
+            //  |     |    |    |    |    |    |    |    |    |    |    |    |    |    |
+            //  |     |    |    |    |    |    |    |    |    |    |    |    |    |    |
+            //  |     |    |    |    |    |    |    |    |    |    |    |    |    |    |
+            //  |     |    |    |    |    |    |    |    |    |    |    |    |    |    |
 
             bindings = <
-&kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  
-&trans     &trans    &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  
-&trans     &trans    &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans          
-&trans     &trans    &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans                  
-&trans     &trans    &trans    &trans    &trans                    &trans  &trans  &trans  &trans  &trans                  
-
+&kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &to 3   &trans
+&trans     &trans    &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans    &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans    &trans    &trans    &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans    &trans    &trans    &trans            &trans  &trans  &trans  &trans  &trans
             >;
+
             label = "Symbol";
+
             //sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             //sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         control_layer {
-//  ---------------------------------------------------------------------------------
-//  |BT_CLR      |BT_SEL 0|BT_SEL 1|BT_SEL 2|BT_SEL 3  |BT_SEL 4 |     |     |    |          |               |    |    |&bootloader|
-//  |EP_TOG      |        |        |ENTER   |INS       |         |     |HOME |UP  |END       |               |    |    |           |
-//  |R           |        |        |        |LS(LC(N8))|LC(ENTER)|LEFT |RIGHT|DOWN|&end_enter|&end_semi_enter|    |    |           |
-//  |&out OUT_TOG|        |        |        |          |         |PG_DN|PG_UP|    |          |               |    |    |           |
-//  |            |        |        |        |          |         |     |     |    |          |               |    |    |           |
+            //  ---------------------------------------------------------------------------------
+            //  |BT_CLR      |BT_SEL 0|BT_SEL 1|BT_SEL 2|BT_SEL 3  |BT_SEL 4 |     |     |    |          |               |    |    |&bootloader|
+            //  |EP_TOG      |        |        |ENTER   |INS       |         |     |HOME |UP  |END       |               |    |    |           |
+            //  |R           |        |        |        |LS(LC(N8))|LC(ENTER)|LEFT |RIGHT|DOWN|&end_enter|&end_semi_enter|    |    |           |
+            //  |&out OUT_TOG|        |        |        |          |         |PG_DN|PG_UP|    |          |               |    |    |           |
+            //  |            |        |        |        |          |         |     |     |    |          |               |    |    |           |
 
             bindings = <
-&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4   &trans     &trans     &trans    &trans      &trans           &trans  &trans  &bootloader  
-&ext_power EP_TOG  &trans        &trans        &kp ENTER     &kp INS         &trans         &trans     &kp HOME   &kp UP    &kp END     &trans           &trans  &trans  &trans       
-&trans             &trans        &trans        &trans        &kp LS(LC(N8))  &kp LC(ENTER)  &kp LEFT   &kp RIGHT  &kp DOWN  &end_enter  &end_semi_enter  &trans  &trans               
-&out OUT_TOG       &trans        &trans        &trans        &trans          &trans         &kp PG_DN  &kp PG_UP  &trans    &trans      &trans           &trans                       
-&trans             &trans        &trans        &trans        &trans                                    &trans     &trans    &trans      &trans           &trans                       
-                                                                                                                                       
+&bt BT_CLR         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4   &trans     &trans     &trans    &trans      &to 0            &trans  &to 4   &bootloader
+&ext_power EP_TOG  &trans        &trans        &kp ENTER     &kp INS         &trans         &trans     &kp HOME   &kp UP    &kp END     &trans           &trans  &trans  &trans
+&trans             &trans        &trans        &trans        &kp LS(LC(N8))  &kp LC(ENTER)  &kp LEFT   &kp RIGHT  &kp DOWN  &end_enter  &end_semi_enter  &trans  &trans
+&out OUT_TOG       &trans        &trans        &trans        &trans          &trans         &kp PG_DN  &kp PG_UP  &trans    &trans      &trans           &trans
+&trans             &trans        &trans        &trans        &trans                         &trans     &trans     &trans    &trans      &trans
             >;
+
             label = "Control";
         };
 
         mouse_layer {
-//  ---------------------------------------------------------------------------------
-//  |    |    |    |    |    |    |              |               |              |         |    |     |    |    |
-//  |    |    |    |    |    |    |              |&mkp LCLK      |&mmv MOVE_UP  |&mkp RCLK|    |     |    |    |
-//  |    |    |    |    |    |    |&mmv MOVE_LEFT|&mmv MOVE_RIGHT|&mmv MOVE_DOWN|         |    |     |    |    |
-//  |    |    |    |    |    |    |&mkp MCLK     |&mkp MB4       |&mkp MB5      |         |UP  |     |    |    |
-//  |    |    |    |    |    |    |              |               |              |LEFT     |DOWN|RIGHT|    |    |
-
+            //  ---------------------------------------------------------------------------------
+            //  |    |    |    |    |    |    |              |               |              |         |    |     |    |    |
+            //  |    |    |    |    |    |    |              |&mkp LCLK      |&mmv MOVE_UP  |&mkp RCLK|    |     |    |    |
+            //  |    |    |    |    |    |    |&mmv MOVE_LEFT|&mmv MOVE_RIGHT|&mmv MOVE_DOWN|         |    |     |    |    |
+            //  |    |    |    |    |    |    |&mkp MCLK     |&mkp MB4       |&mkp MB5      |         |UP  |     |    |    |
+            //  |    |    |    |    |    |    |              |               |              |LEFT     |DOWN|RIGHT|    |    |
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans           &trans          &trans     &trans    &trans     &trans  &trans  
-&trans  &trans  &trans  &trans  &trans  &trans  &trans          &mkp LCLK        &mmv MOVE_UP    &mkp RCLK  &trans    &trans     &trans  &trans  
-&trans  &trans  &trans  &trans  &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_RIGHT  &mmv MOVE_DOWN  &trans     &trans    &trans     &trans          
-&trans  &trans  &trans  &trans  &trans  &trans  &mkp MCLK       &mkp MB4         &mkp MB5        &trans     &kp UP    &trans                     
-&trans  &trans  &trans  &trans  &trans                          &trans           &trans          &kp LEFT   &kp DOWN  &kp RIGHT                  
-
+&trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans           &trans          &trans     &trans     &trans  &to 5   &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans          &mkp LCLK        &mmv MOVE_UP    &mkp RCLK  &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_RIGHT  &mmv MOVE_DOWN  &trans     &trans     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &mkp MCLK       &mkp MB4         &mkp MB5        &trans     &kp UP     &trans
+&trans  &trans  &trans  &trans  &trans          &trans          &trans           &kp LEFT        &kp DOWN   &kp RIGHT
             >;
+
             label = "Mouse";
         };
     };
