@@ -210,7 +210,7 @@ int zmk_widget_output_status_init(struct zmk_widget_output_status *widget, lv_ob
     selection_line = lv_line_create(widget->obj);
     lv_line_set_points(selection_line, selection_line_points, 2);
     lv_obj_add_style(selection_line, &style_line, 0);
-    lv_obj_align_to(selection_line, usb, LV_ALIGN_OUT_TOP_LEFT, 3, -1);
+    lv_obj_align_to(selection_line, usb, LV_ALIGN_OUT_TOP_LEFT, 0, -1);
  
     sys_slist_append(&widgets, &widget->node);
 

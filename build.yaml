@@ -23,9 +23,11 @@ include:
   - board: nice_nano_v2
     shield: kawvin_63 display_042
     cmake-args: -DCONFIG_ZMK_DISPLAY=y
-    artifact-name: kawvin63_With042
+    artifact-name: ky63_With042
 
-# # 五、重置固件
+
+
+# # 重置固件
 #   - board: nice_nano_v2
 #     shield: settings_reset
-#     artifact-name: kawvin46_M5_settings_reset
+#     artifact-name: ky63_settings_reset
