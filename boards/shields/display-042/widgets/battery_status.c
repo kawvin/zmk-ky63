@@ -31,11 +31,19 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 static sys_slist_t widgets = SYS_SLIST_STATIC_INIT(&widgets);
 
 LV_IMG_DECLARE(battery00_icon);
+LV_IMG_DECLARE(battery01_icon);
+LV_IMG_DECLARE(battery02_icon);
+LV_IMG_DECLARE(battery03_icon);
+LV_IMG_DECLARE(battery04_icon);
 LV_IMG_DECLARE(batterycharge_icon);
 LV_IMG_DECLARE(disconnect_icon);
 
 const lv_img_dsc_t *batterys_level[] = {
     &battery00_icon,
+    &battery01_icon,
+    &battery02_icon,
+    &battery03_icon,
+    &battery04_icon,
     &batterycharge_icon,
     &disconnect_icon,
 };
@@ -82,11 +90,14 @@ static void set_battery_symbol(lv_obj_t *widget, struct battery_state state) {
         // lv_img_set_src(symbol, batterys_level[0]);
         lv_canvas_draw_rect(canvas, 3, 7, 7, 3, &rect_white_dsc);
         if (level > 96) {
-            lv_canvas_draw_rect(canvas, 3, 5, 7, 12, &rect_white_dsc);
+            // lv_canvas_draw_rect(canvas, 3, 5, 7, 12, &rect_white_dsc);
+            lv_img_set_src(canvas, batterys_level[0]);
         } else if (level > 88) {
-            lv_canvas_draw_rect(canvas, 3, 6, 7, 11, &rect_white_dsc);
+            // lv_canvas_draw_rect(canvas, 3, 6, 7, 11, &rect_white_dsc);
+            lv_img_set_src(canvas, batterys_level[1]);
         } else if (level > 80) {
-            lv_canvas_draw_rect(canvas, 3, 7, 7, 10, &rect_white_dsc);
+            // lv_canvas_draw_rect(canvas, 3, 7, 7, 10, &rect_white_dsc);
+            lv_img_set_src(canvas, batterys_level[2]);
         } else if (level > 72) {
             lv_canvas_draw_rect(canvas, 3, 8, 7, 9, &rect_white_dsc);
         } else if (level > 64) {
@@ -110,7 +121,7 @@ static void set_battery_symbol(lv_obj_t *widget, struct battery_state state) {
         }
         
     } else {
-        lv_img_set_src(canvas, batterys_level[1]);
+        lv_img_set_src(canvas, batterys_level[5]);
     }
 }
 
@@ -125,9 +136,9 @@ static struct battery_state peripheral_battery_status_get_state(const zmk_event_
     return (struct battery_state){
         .source = ev->source + SOURCE_OFFSET,
         .level = ev->state_of_charge,
-// #if IS_ENABLED(CONFIG_USB_DEVICE_STACK)
-//         .usb_present = zmk_usb_is_powered(),
-// #endif /* IS_ENABLED(CONFIG_USB_DEVICE_STACK) */
+#if IS_ENABLED(CONFIG_USB_DEVICE_STACK)
+         .usb_present = zmk_usb_is_powered(),
+#endif /* IS_ENABLED(CONFIG_USB_DEVICE_STACK) */
     };
 }
 
