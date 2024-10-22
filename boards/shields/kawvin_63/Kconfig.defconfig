@@ -6,8 +6,8 @@
 config ZMK_KEYBOARD_NAME
     default "Kawvin_63"
 
-#config ZMK_SPLIT_ROLE_CENTRAL
-#    default y
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
 
 #endif # SHIELD_KAWVIN_63
 
