@@ -203,21 +203,21 @@ int zmk_widget_ky_battery_status_init(struct zmk_widget_ky_battery_status *widge
         lv_canvas_set_buffer(image_canvas, battery_image_buffer[i], 13, 20, LV_IMG_CF_TRUE_COLOR);
         lv_obj_align(image_canvas, LV_ALIGN_TOP_LEFT, i*15, 1);
 
-        // lv_draw_rect_dsc_t rect_black_dsc;
-        // init_rect_dsc(&rect_black_dsc, LVGL_BACKGROUND);
-        // lv_draw_rect_dsc_t rect_white_dsc;
-        // init_rect_dsc(&rect_white_dsc, LVGL_FOREGROUND);
-        // lv_draw_img_dsc_t img_dsc;
-        // lv_draw_img_dsc_init(&img_dsc); //x,y是坐标，src是图像的源，可以是文件、结构体指针、Symbol，img_dsc是图像的样式。
-        // lv_canvas_draw_img(image_canvas, 0, 0, batterys_level[0], &img_dsc);
-        // lv_canvas_draw_rect(image_canvas, 2, 12, 9, 5, &rect_white_dsc);
+        lv_draw_rect_dsc_t rect_black_dsc;
+        init_rect_dsc(&rect_black_dsc, LVGL_BACKGROUND);
+        lv_draw_rect_dsc_t rect_white_dsc;
+        init_rect_dsc(&rect_white_dsc, LVGL_FOREGROUND);
+        lv_draw_img_dsc_t img_dsc;
+        lv_draw_img_dsc_init(&img_dsc); //x,y是坐标，src是图像的源，可以是文件、结构体指针、Symbol，img_dsc是图像的样式。
+        lv_canvas_draw_img(image_canvas, 0, 0, batterys_level[0], &img_dsc);
+        lv_canvas_draw_rect(image_canvas, 3, 7, 7, 5, &rect_white_dsc);
 
         // lv_obj_align(battery_label, LV_ALIGN_TOP_LEFT, i*14+3, 10);
         
         // lv_obj_add_flag(image_canvas, LV_OBJ_FLAG_HIDDEN);
         // lv_obj_add_flag(battery_label, LV_OBJ_FLAG_HIDDEN);
 
-        lv_img_set_src(image_canvas, batterys_level[0]);
+        // lv_img_set_src(image_canvas, batterys_level[0]);
     }
 #endif
 
