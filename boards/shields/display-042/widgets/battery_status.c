@@ -200,7 +200,7 @@ int zmk_widget_peripheral_battery_status_init(struct zmk_widget_peripheral_batte
         lv_draw_img_dsc_t img_dsc;
         lv_draw_img_dsc_init(&img_dsc); //x,y是坐标，src是图像的源，可以是文件、结构体指针、Symbol，img_dsc是图像的样式。
         lv_canvas_draw_img(image_canvas, 0, 0, batterys_level[0], &img_dsc);
-        lv_canvas_draw_rect(canvas, 2, 12, 6, 5, &rect_white_dsc);
+        lv_canvas_draw_rect(image_canvas, 2, 12, 6, 5, &rect_white_dsc);
 
         // lv_obj_align(battery_label, LV_ALIGN_TOP_LEFT, i*14+3, 10);
         
