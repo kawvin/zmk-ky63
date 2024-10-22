@@ -80,6 +80,7 @@ static void set_battery_symbol(lv_obj_t *widget, struct battery_state state) {
         lv_draw_img_dsc_init(&img_dsc); //x,y是坐标，src是图像的源，可以是文件、结构体指针、Symbol，img_dsc是图像的样式。
         lv_canvas_draw_img(canvas, 0, 0, batterys_level[0], &img_dsc);
         // lv_img_set_src(symbol, batterys_level[0]);
+        lv_canvas_draw_rect(canvas, 3, 7, 7, 3, &rect_white_dsc);
         if (level > 96) {
             lv_canvas_draw_rect(canvas, 3, 5, 7, 12, &rect_white_dsc);
         } else if (level > 88) {
@@ -105,7 +106,7 @@ static void set_battery_symbol(lv_obj_t *widget, struct battery_state state) {
         } else if (level > 8) {
             lv_canvas_draw_rect(canvas, 3, 16, 7, 1, &rect_white_dsc);
         } else {
-            
+            lv_canvas_draw_rect(canvas, 3, 12, 7, 10, &rect_white_dsc);
         }
         
     } else {
