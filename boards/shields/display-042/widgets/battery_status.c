@@ -210,7 +210,7 @@ int zmk_widget_ky_battery_status_init(struct zmk_widget_ky_battery_status *widge
 
     sys_slist_append(&widgets, &widget->node);
 
-    widget_battery_status_init();
+    widget_ky_battery_status_init();
     return 0;
 }
 
