@@ -20,8 +20,10 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 static struct zmk_widget_output_status output_status_widget;
 static struct zmk_widget_layer_status layer_status_widget;
-static struct zmk_widget_battery_status battery_status_widget;
+static struct zmk_widget_ky_battery_status ky_battery_status_widget;
+#if IS_ENABLED(CONFIG_ZMK_WIDGET_BATTERY_STATUS_SHOW_PERIPHERAL)
 static struct zmk_widget_peripheral_battery_status peripheral_battery_status_widget;
+#endif
 
 lv_style_t global_style;
 
@@ -41,11 +43,12 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
     lv_obj_align(zmk_widget_layer_status_obj(&layer_status_widget), LV_ALIGN_TOP_LEFT, 0+32,26);
     // lv_obj_align(zmk_widget_layer_status_obj(&layer_status_widget), LV_ALIGN_TOP_LEFT, 30,0);
 
-// 电池电量
-// #if IS_ENABLED(CONFIG_ZMK_WIDGET_BATTERY_STATUS_SHOW_PERIPHERAL)
-    zmk_widget_peripheral_battery_status_init(&peripheral_battery_status_widget, widget->obj);
-    lv_obj_align(zmk_widget_peripheral_battery_status_obj(&peripheral_battery_status_widget), LV_ALIGN_TOP_LEFT, 41+32, 2);
-// #endif
+    // 电池电量
+    zmk_widget_ky_battery_status_init(&ky_battery_status_widget, widget->obj);
+    lv_obj_align(zmk_widget_ky_battery_status_obj(&ky_battery_status_widget), LV_ALIGN_TOP_LEFT, 41+32, 2);
+
+    //zmk_widget_peripheral_battery_status_init(&peripheral_battery_status_widget, widget->obj);
+    //lv_obj_align(zmk_widget_peripheral_battery_status_obj(&peripheral_battery_status_widget), LV_ALIGN_TOP_LEFT, 41+32, 2);
 
     // 输入输出状态
     zmk_widget_output_status_init(&output_status_widget, widget->obj);

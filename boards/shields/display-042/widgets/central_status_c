@@ -23,6 +23,7 @@ static struct zmk_widget_layer_status layer_status_widget;
 static struct zmk_widget_battery_status battery_status_widget;
 static struct zmk_widget_peripheral_battery_status peripheral_battery_status_widget;
 
+
 lv_style_t global_style;
 
 int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
