@@ -133,3 +133,141 @@ const lv_img_dsc_t battery00_icon = {
   .data_size = 48,
   .data = battery00_map,
 };
+
+#ifndef LV_ATTRIBUTE_IMG_BATTERY10
+#define LV_ATTRIBUTE_IMG_BATTERY10
+#endif
+
+const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_BATTERY10 uint8_t battery10_map[] = {
+  0xff, 0xff, 0xff, 0xff, 	/*Color of index 0*/
+  0x00, 0x00, 0x00, 0xff, 	/*Color of index 1*/
+
+  0x00, 0x00, 
+  0x1c, 0x00, 
+  0x7f, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x7f, 0x00, 
+  0x7f, 0x00, 
+  0x00, 0x00, 
+};
+
+const lv_img_dsc_t battery10_icon = {
+  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+  .header.always_zero = 0,
+  .header.reserved = 0,
+  .header.w = 9,
+  .header.h = 14,
+  .data_size = 36,
+  .data = battery10_map,
+};
+
+
+#ifndef LV_ATTRIBUTE_IMG_BATTERY20
+#define LV_ATTRIBUTE_IMG_BATTERY20
+#endif
+
+const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_BATTERY20 uint8_t battery20_map[] = {
+  0xff, 0xff, 0xff, 0xff, 	/*Color of index 0*/
+  0x00, 0x00, 0x00, 0xff, 	/*Color of index 1*/
+
+  0x00, 0x00, 
+  0x1c, 0x00, 
+  0x7f, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x7f, 0x00, 
+  0x7f, 0x00, 
+  0x7f, 0x00, 
+  0x00, 0x00, 
+};
+
+const lv_img_dsc_t battery20_icon = {
+  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+  .header.always_zero = 0,
+  .header.reserved = 0,
+  .header.w = 9,
+  .header.h = 14,
+  .data_size = 36,
+  .data = battery20_map,
+};
+
+#ifndef LV_ATTRIBUTE_IMG_BATTERY30
+#define LV_ATTRIBUTE_IMG_BATTERY30
+#endif
+
+const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_BATTERY30 uint8_t battery30_map[] = {
+  0xff, 0xff, 0xff, 0xff, 	/*Color of index 0*/
+  0x00, 0x00, 0x00, 0xff, 	/*Color of index 1*/
+
+  0x00, 0x00, 
+  0x1c, 0x00, 
+  0x7f, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x7f, 0x00, 
+  0x7f, 0x00, 
+  0x7f, 0x00, 
+  0x7f, 0x00, 
+  0x00, 0x00, 
+};
+
+const lv_img_dsc_t battery30_icon = {
+  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+  .header.always_zero = 0,
+  .header.reserved = 0,
+  .header.w = 9,
+  .header.h = 14,
+  .data_size = 36,
+  .data = battery30_map,
+};
+
+
+#ifndef LV_ATTRIBUTE_IMG_BATTERY40
+#define LV_ATTRIBUTE_IMG_BATTERY40
+#endif
+
+const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_BATTERY40 uint8_t battery40_map[] = {
+  0xff, 0xff, 0xff, 0xff, 	/*Color of index 0*/
+  0x00, 0x00, 0x00, 0xff, 	/*Color of index 1*/
+
+  0x00, 0x00, 
+  0x1c, 0x00, 
+  0x7f, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x41, 0x00, 
+  0x7f, 0x00, 
+  0x7f, 0x00, 
+  0x7f, 0x00, 
+  0x7f, 0x00, 
+  0x7f, 0x00, 
+  0x00, 0x00, 
+};
+
+const lv_img_dsc_t battery40_icon = {
+  .header.cf = LV_IMG_CF_INDEXED_1BIT,
+  .header.always_zero = 0,
+  .header.reserved = 0,
+  .header.w = 9,
+  .header.h = 14,
+  .data_size = 36,
+  .data = battery40_map,
+};

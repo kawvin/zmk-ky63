@@ -31,19 +31,19 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 static sys_slist_t widgets = SYS_SLIST_STATIC_INIT(&widgets);
 
 LV_IMG_DECLARE(battery00_icon);
-LV_IMG_DECLARE(battery01_icon);
-LV_IMG_DECLARE(battery02_icon);
-LV_IMG_DECLARE(battery03_icon);
-LV_IMG_DECLARE(battery04_icon);
+LV_IMG_DECLARE(battery10_icon);
+LV_IMG_DECLARE(battery20_icon);
+LV_IMG_DECLARE(battery30_icon);
+LV_IMG_DECLARE(battery40_icon);
 LV_IMG_DECLARE(batterycharge_icon);
 LV_IMG_DECLARE(disconnect_icon);
 
 const lv_img_dsc_t *batterys_level[] = {
     &battery00_icon,
-    &battery01_icon,
-    &battery02_icon,
-    &battery03_icon,
-    &battery04_icon,
+    &battery10_icon,
+    &battery20_icon,
+    &battery30_icon,
+    &battery40_icon,
     &batterycharge_icon,
     &disconnect_icon,
 };
@@ -91,10 +91,10 @@ static void set_battery_symbol(lv_obj_t *widget, struct battery_state state) {
         lv_canvas_draw_rect(canvas, 3, 7, 7, 3, &rect_white_dsc);
         if (level > 96) {
             // lv_canvas_draw_rect(canvas, 3, 5, 7, 12, &rect_white_dsc);
-            lv_img_set_src(canvas, batterys_level[0]);
+            lv_img_set_src(canvas, batterys_level[4]);
         } else if (level > 88) {
             // lv_canvas_draw_rect(canvas, 3, 6, 7, 11, &rect_white_dsc);
-            lv_img_set_src(canvas, batterys_level[1]);
+            lv_img_set_src(canvas, batterys_level[3]);
         } else if (level > 80) {
             // lv_canvas_draw_rect(canvas, 3, 7, 7, 10, &rect_white_dsc);
             lv_img_set_src(canvas, batterys_level[2]);
