@@ -153,7 +153,10 @@ static struct battery_state battery_status_get_state(const zmk_event_t *eh) {
 ZMK_DISPLAY_WIDGET_LISTENER(widget_peripheral_battery_status, struct battery_state, 
                             battery_status_update_cb, battery_status_get_state)
 
+// ZMK_SUBSCRIPTION(widget_peripheral_battery_status, zmk_peripheral_battery_state_changed);
 
+// 主手电量监控
+ZMK_SUBSCRIPTION(widget_peripheral_battery_status, zmk_battery_state_changed);
 
 int zmk_widget_peripheral_battery_status_init(struct zmk_widget_peripheral_battery_status *widget, lv_obj_t *parent) {
     widget->obj = lv_obj_create(parent);
