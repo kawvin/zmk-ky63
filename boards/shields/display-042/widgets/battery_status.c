@@ -154,15 +154,21 @@ ZMK_DISPLAY_WIDGET_LISTENER(widget_peripheral_battery_status, struct battery_sta
                             battery_status_update_cb, battery_status_get_state)
 ZMK_SUBSCRIPTION(widget_peripheral_battery_status, zmk_peripheral_battery_state_changed);
 
-#if IS_ENABLED(CONFIG_ZMK_DONGLE_DISPLAY_DONGLE_BATTERY)
-#if !IS_ENABLED(CONFIG_ZMK_SPLIT) || IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
 
+// 主手电量监控
 ZMK_SUBSCRIPTION(widget_peripheral_battery_status, zmk_battery_state_changed);
-#if IS_ENABLED(CONFIG_USB_DEVICE_STACK)
 ZMK_SUBSCRIPTION(widget_peripheral_battery_status, zmk_usb_conn_state_changed);
-#endif /* IS_ENABLED(CONFIG_USB_DEVICE_STACK) */
-#endif /* !IS_ENABLED(CONFIG_ZMK_SPLIT) || IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL) */
-#endif /* IS_ENABLED(CONFIG_ZMK_DONGLE_DISPLAY_DONGLE_BATTERY) */
+
+
+//#if IS_ENABLED(CONFIG_ZMK_DONGLE_DISPLAY_DONGLE_BATTERY)
+//#if !IS_ENABLED(CONFIG_ZMK_SPLIT) || IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
+
+//ZMK_SUBSCRIPTION(widget_peripheral_battery_status, zmk_battery_state_changed);
+//#if IS_ENABLED(CONFIG_USB_DEVICE_STACK)
+//ZMK_SUBSCRIPTION(widget_peripheral_battery_status, zmk_usb_conn_state_changed);
+//#endif /* IS_ENABLED(CONFIG_USB_DEVICE_STACK) */
+//#endif /* !IS_ENABLED(CONFIG_ZMK_SPLIT) || IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL) */
+//#endif /* IS_ENABLED(CONFIG_ZMK_DONGLE_DISPLAY_DONGLE_BATTERY) */
 
 
 int zmk_widget_peripheral_battery_status_init(struct zmk_widget_peripheral_battery_status *widget, lv_obj_t *parent) {
