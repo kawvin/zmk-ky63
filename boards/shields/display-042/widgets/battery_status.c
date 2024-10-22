@@ -55,7 +55,8 @@ struct battery_state {
 
 
 static void set_battery_symbol(lv_obj_t *widget, struct battery_state state) {
-    lv_obj_t *symbol = lv_obj_get_child(widget, state.source );
+    lv_obj_t *canvas = lv_obj_get_child(widget, state.source );
+    // lv_obj_t *symbol = lv_obj_get_child(widget, state.source );
     // lv_obj_t *symbol = lv_obj_get_child(widget, state.source * 2);
     // lv_obj_t *label = lv_obj_get_child(widget, state.source * 2 + 1);
     uint8_t level = state.level;
@@ -65,7 +66,7 @@ static void set_battery_symbol(lv_obj_t *widget, struct battery_state state) {
     //     lv_obj_add_flag(symbol, LV_OBJ_FLAG_HIDDEN);
     // }
     // 绘制电池
-    lv_obj_t *canvas = lv_canvas_create(symbol);
+    // lv_obj_t *canvas = lv_canvas_create(symbol);
     lv_draw_rect_dsc_t rect_black_dsc;
     init_rect_dsc(&rect_black_dsc, LVGL_BACKGROUND);
     lv_draw_rect_dsc_t rect_white_dsc;
