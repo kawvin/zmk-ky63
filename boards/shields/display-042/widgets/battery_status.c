@@ -152,13 +152,14 @@ static struct battery_state battery_status_get_state(const zmk_event_t *eh) {
 
 ZMK_DISPLAY_WIDGET_LISTENER(widget_peripheral_battery_status, struct battery_state, 
                             battery_status_update_cb, battery_status_get_state)
-ZMK_SUBSCRIPTION(widget_peripheral_battery_status, zmk_peripheral_battery_state_changed);
-
 
 // 主手电量监控
 ZMK_SUBSCRIPTION(widget_peripheral_battery_status, zmk_battery_state_changed);
-ZMK_SUBSCRIPTION(widget_peripheral_battery_status, zmk_usb_conn_state_changed);
 
+#if IS_ENABLED(CONFIG_ZMK_SPLIT)
+ZMK_SUBSCRIPTION(widget_peripheral_battery_status, zmk_peripheral_battery_state_changed);
+ZMK_SUBSCRIPTION(widget_peripheral_battery_status, zmk_usb_conn_state_changed);
+#endif /* !IS_ENABLED(CONFIG_ZMK_SPLIT) */
 
 //#if IS_ENABLED(CONFIG_ZMK_DONGLE_DISPLAY_DONGLE_BATTERY)
 //#if !IS_ENABLED(CONFIG_ZMK_SPLIT) || IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
