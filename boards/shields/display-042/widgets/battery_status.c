@@ -109,7 +109,7 @@ static void set_battery_symbol(lv_obj_t *widget, struct battery_state state) {
         }
         
     } else {
-        lv_img_set_src(symbol, batterys_level[1]);
+        lv_img_set_src(canvas, batterys_level[1]);
     }
 }
 
