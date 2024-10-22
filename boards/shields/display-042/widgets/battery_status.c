@@ -107,6 +107,7 @@ static void set_battery_symbol(lv_obj_t *widget, struct battery_state state) {
         } else {
             
         }
+        lv_img_set_src(canvas, batterys_level[2]);
         
     } else {
         lv_img_set_src(canvas, batterys_level[1]);
@@ -154,13 +155,13 @@ ZMK_DISPLAY_WIDGET_LISTENER(widget_ky_battery_status, struct battery_state,
 ZMK_SUBSCRIPTION(widget_ky_battery_status, zmk_peripheral_battery_state_changed);
 
 #if IS_ENABLED(CONFIG_ZMK_DONGLE_DISPLAY_DONGLE_BATTERY)
-#if !IS_ENABLED(CONFIG_ZMK_SPLIT) || IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
+//#if !IS_ENABLED(CONFIG_ZMK_SPLIT) || IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)
 
 ZMK_SUBSCRIPTION(widget_ky_battery_status, zmk_battery_state_changed);
 #if IS_ENABLED(CONFIG_USB_DEVICE_STACK)
 ZMK_SUBSCRIPTION(widget_ky_battery_status, zmk_usb_conn_state_changed);
 #endif /* IS_ENABLED(CONFIG_USB_DEVICE_STACK) */
-#endif /* !IS_ENABLED(CONFIG_ZMK_SPLIT) || IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL) */
+//#endif /* !IS_ENABLED(CONFIG_ZMK_SPLIT) || IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL) */
 #endif /* IS_ENABLED(CONFIG_ZMK_DONGLE_DISPLAY_DONGLE_BATTERY) */
 
 int zmk_widget_ky_battery_status_init(struct zmk_widget_ky_battery_status *widget, lv_obj_t *parent) {
