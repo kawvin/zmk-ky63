@@ -77,7 +77,7 @@ static void set_battery_symbol(lv_obj_t *widget, struct battery_state state) {
     if (!state.usb_present) {
         lv_draw_img_dsc_t img_dsc;
         lv_draw_img_dsc_init(&img_dsc); //x,y是坐标，src是图像的源，可以是文件、结构体指针、Symbol，img_dsc是图像的样式。
-        lv_canvas_draw_img(canvas, 0, 0, batterys_level[0], &img_dsc);
+        //lv_canvas_draw_img(canvas, 0, 0, batterys_level[0], &img_dsc);
         // lv_img_set_src(symbol, batterys_level[0]);
         if (level > 96) {
             lv_canvas_draw_rect(canvas, 2, 5, 6, 12, &rect_white_dsc);
