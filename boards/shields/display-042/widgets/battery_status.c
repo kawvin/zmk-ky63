@@ -111,7 +111,7 @@ static void set_battery_symbol(lv_obj_t *widget, struct battery_state state) {
             lv_img_set_src(canvas, batterys_level[12]);
         } else if (level > 88) {
             // lv_canvas_draw_rect(canvas, 3, 6, 7, 11, &rect_black_dsc);
-            v_img_set_src(canvas, batterys_level[11]);
+            lv_img_set_src(canvas, batterys_level[11]);
         } else if (level > 80) {
             // lv_canvas_draw_rect(canvas, 3, 7, 7, 10, &rect_black_dsc);
             lv_img_set_src(canvas, batterys_level[10]);
