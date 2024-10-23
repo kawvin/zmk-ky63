@@ -179,11 +179,11 @@
             //  |LCTRL |LGUI|LALT|&ltq 4 DEL|&ltq 1 SPACE|    |    |&ltq 1 SPACE|&ltq 5 INS|RGUI|RALT|RCTRL |     |    |
 
             bindings = <
-&mt GRAVE ESC  &mt F1 N1  &mt F2 N2  &mt F3 N3   &mt F4 N4     &mt F5 N5  &mt F6 N6     &mt F7 N7   &mt F8 N8  &mt F9 N9  &mt F10 N0  &mt F11 MINUS  &mt F12 EQUAL  &kp BSPC
-&kp TAB        &kp Q      &kp W      &kp E       &kp R         &kp T      &kp Y         &kp U       &kp I      &kp O      &kp P       &kp LBKT       &kp RBKT       &kp BSLH
-&kp LCTRL      &kp A      &kp S      &kp D       &ltq 2 F      &kp G      &kp H         &kp J       &kp K      &kp L      &kp SEMI    &kp SQT        &kp ENTER
-&kp LSHIFT     &kp Z      &kp X      &kp C       &ltq 3 V      &kp B      &kp N         &kp M       &kp COMMA  &kp DOT    &kp FSLH    &kp RSHIFT
-&kp LCTRL      &kp LGUI   &kp LALT   &ltq 4 DEL  &ltq 1 SPACE             &ltq 1 SPACE  &ltq 5 INS  &kp RGUI   &kp RALT   &kp RCTRL
+&mt GRAVE ESC  &mt F1 N1  &mt F2 N2  &mt F3 N3   &mt F4 N4     &mt F5 N5  &mt F6 N6     &mt F7 N7   &mt F8 N8      &mt F9 N9      &mt F10 N0       &mt F11 MINUS  &mt F12 EQUAL  &kp BSPC
+&kp TAB        &kp Q      &kp W      &kp E       &kp R         &kp T      &kp Y         &kp U       &kp I          &kp O          &kp P            &kp LBKT       &kp RBKT       &kp BSLH
+&kp LCTRL      &kp A      &kp S      &kp D       &ltq 2 F      &kp G      &kp H         &ltq 2 J    &kp K          &kp L          &kp SEMI         &kp SQT        &kp ENTER
+&kp LSHIFT     &kp Z      &kp X      &kp C       &ltq 3 V      &kp B      &kp N         &kp M       &kp COMMA      &kp DOT        &kp FSLH         &kp RSHIFT
+&kp LCTRL      &kp LGUI   &kp LALT   &ltq 4 DEL  &ltq 1 SPACE             &ltq 1 SPACE  &ltq 5 INS  &hm RWIN LEFT  &hm RALT DOWN  &hm RCTRL RIGHT
             >;
 
             label = "Qwerty";
