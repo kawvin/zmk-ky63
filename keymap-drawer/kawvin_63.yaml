@@ -35,7 +35,7 @@ layers:
   - {t: F, h: function}
   - G
   - H
-  - J
+  - {t: J, h: function}
   - K
   - L
   - ;
@@ -60,9 +60,9 @@ layers:
   - {t: SPACE, h: number}
   - {t: SPACE, h: number}
   - {t: INS, h: mouse}
-  - RGUI
-  - RALT
-  - RCTRL
+  - {t: LEFT, h: RWIN}
+  - {t: DOWN, h: RALT}
+  - {t: RIGHT, h: RCTRL}
   number:
   - '0'
   - {t: ▽, type: trans}
