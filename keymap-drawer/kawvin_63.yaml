@@ -51,7 +51,7 @@ layers:
   - M
   - ','
   - .
-  - /
+  - {t: UP, h: /}
   - RSHIFT
   - LCTRL
   - LGUI
@@ -234,9 +234,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - MUTE
+  - VOL DN
+  - VOL UP
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -400,7 +400,7 @@ combos:
   k: {t: '}', h: '{'}
 - p: [14, 15]
   k: {t: \, h: '|'}
-- p: [1, 2]
+- p: [32, 33]
   k: {t: '-', h: _}
 - p: [44, 45]
   k: {t: ',', h: .}
@@ -412,3 +412,5 @@ combos:
   k: ENTER
 - p: [42, 43]
   k: '?'
+- p: [1, 2]
+  k: {t: '=', h: +}
