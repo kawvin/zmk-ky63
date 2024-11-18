@@ -1,5 +1,5 @@
 layers:
-  qwerty:
+  Qwerty:
   - {t: ESC, h: '`'}
   - {t: '1', h: F1}
   - {t: '2', h: F2}
@@ -32,10 +32,10 @@ layers:
   - A
   - S
   - D
-  - {t: F, h: function}
+  - {t: F, h: Function}
   - G
   - H
-  - {t: J, h: function}
+  - {t: J, h: Function}
   - K
   - L
   - ;
@@ -45,7 +45,7 @@ layers:
   - Z
   - X
   - C
-  - {t: V, h: symbol}
+  - {t: V, h: Symbol}
   - B
   - N
   - M
@@ -56,38 +56,38 @@ layers:
   - LCTRL
   - LGUI
   - LALT
-  - {t: DEL, h: control}
-  - {t: SPACE, h: number}
-  - {t: SPACE, h: number}
-  - {t: INS, h: mouse}
+  - {t: DEL, h: Control}
+  - {t: SPACE, h: Number}
+  - {t: SPACE, h: Number}
+  - {t: INS, h: Mouse}
   - {t: LEFT, h: RWIN}
   - {t: DOWN, h: RALT}
   - {t: RIGHT, h: RCTRL}
-  number:
-  - '0'
+  Number:
+  - KP 0
+  - KP 1
+  - KP 2
+  - KP 3
+  - KP 4
+  - KP 5
+  - KP 6
+  - KP 7
+  - KP 8
+  - KP 9
+  - KP 0
   - {t: ▽, type: trans}
+  - {t: Number, h: toggle}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: number, h: toggle}
-  - {t: ▽, type: trans}
-  - '0'
-  - '6'
-  - '7'
-  - '8'
-  - '9'
+  - KP 0
+  - KP 6
+  - KP 7
+  - KP 8
+  - KP 9
   - KP DOT
   - {t: KP MULTIPLY, h: KP SLASH}
-  - '4'
-  - '5'
-  - '6'
+  - KP 4
+  - KP 5
+  - KP 6
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -99,9 +99,9 @@ layers:
   - KP PLUS
   - ENTER
   - KP PLUS
-  - '1'
-  - '2'
-  - '3'
+  - KP 1
+  - KP 2
+  - KP 3
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -112,7 +112,7 @@ layers:
   - PG DN
   - BSPC
   - KP MINUS
-  - '0'
+  - KP 0
   - KP DOT
   - KP DOT
   - {t: ▽, type: trans}
@@ -127,7 +127,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  function:
+  Function:
   - {t: ▽, type: trans}
   - F1
   - F2
@@ -140,7 +140,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: function, h: toggle}
+  - {t: Function, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - F6
@@ -191,7 +191,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  symbol:
+  Symbol:
   - ^
   - '&'
   - '*'
@@ -204,7 +204,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: symbol, h: toggle}
+  - {t: Symbol, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -255,7 +255,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  control:
+  Control:
   - BT CLR
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
@@ -266,9 +266,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: qwerty, h: toggle}
+  - {t: Qwerty, h: toggle}
   - {t: ▽, type: trans}
-  - {t: control, h: toggle}
+  - {t: Control, h: toggle}
   - '&bootloader'
   - EP TOG
   - {t: ▽, type: trans}
@@ -319,7 +319,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  mouse:
+  Mouse:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -332,7 +332,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: mouse, h: toggle}
+  - {t: Mouse, h: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -400,7 +400,7 @@ combos:
   k: {t: '}', h: '{'}
 - p: [14, 15]
   k: {t: \, h: '|'}
-- p: [32, 33]
+- p: [2, 3]
   k: {t: '-', h: _}
 - p: [44, 45]
   k: {t: ',', h: .}
